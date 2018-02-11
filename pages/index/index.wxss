@@ -1,0 +1,144 @@
+/**index.wxss**/
+.header{
+  display: flex;
+  flex-direction:column;
+  align-items: center; 
+  width: 100%; 
+  position: relative;
+  height: 150px;
+  background-color: #d4237a;
+}
+.userinfo-new {
+  display: flex;
+  flex-direction:column;
+  align-items: center; 
+  width: 100%;
+  position: absolute;
+  bottom: 20px;
+} 
+.title1{  
+  display: flex;
+  width: 100%;
+  flex-direction:row;
+  align-items: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: #aaa;
+}
+.title1 text{
+  padding-left: 10px;
+}
+.welcome{
+  font-size: 13px;
+}
+.subcontainer1{  
+  display: flex; 
+  background-color: #fff;
+  width: 100%;   
+  flex-direction:column;
+  align-items: center;
+}
+.subcontainer1 textarea{
+   font-size:13px;
+   color:#2c2c2c;
+   height: 60px;
+   padding: 10px;
+}
+.textarea-placeholder{
+  color:#FFAEB9;
+  font-size:13px;
+}
+ 
+
+.subcontainer3{     
+  display: flex;
+  flex-direction:  column; 
+  align-items: center;    
+  width:100%;
+  margin-top: 30rpx; 
+} 
+ 
+
+.createpartybtn{
+  display: flex; 
+  height: 100%;
+  width:100%;
+  align-items: center;  
+}
+
+.createpartybtn text{
+  width: 100%;
+  text-align: center;
+}
+ 
+.record{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.record1{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+
+.subcontainer2{  
+  display: flex;
+  flex-direction:column; 
+  width: 100%;
+  margin-top: 2rpx;  
+  background-color: #fff;
+} 
+.sub2-item{
+  display:  flex;
+  flex-direction: row;
+  align-items: center; 
+  justify-content:  space-between;
+  width: 100%;
+  height: 40px;
+  margin-bottom: 1px; 
+}
+.sub2-item-hover{
+  background-color: #e6e6e6;
+}
+
+.sub2-itme-1{
+  display:  flex;
+  flex-direction: row;
+  align-items: center; 
+  justify-content:  flex-start; 
+  padding: 10px;
+  width: 100%;
+}
+.sub2-itme-1 image{
+  height: 50rpx; 
+  width: 50rpx; 
+  border-radius: 50%;
+}
+.sub2-itme-1 text{
+  font-size: 28rpx;
+  padding-left: 10px;
+}
+
+.sub2-item-2{
+  display:  flex;
+  flex-direction: row;
+  align-items: center;   
+  align-self: center; 
+  width: 50px;
+}
+.sub2-item-2 image{
+  height: 30px; 
+  width: 30px; 
+}
+.picker{
+  display: flex;
+  flex-direction: row;
+  align-items: center;   
+  align-self: center; 
+}
+.picker text{ 
+  font-size: 25rpx;
+} 

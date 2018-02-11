@@ -1,0 +1,44 @@
+<swiper indicator-dots="true" bindchange="changeDay">
+  <block wx:key="{{day}}" wx:for="{{schedules}}">
+    <swiper-item>
+      <view class='container' style="background: url('{{item.bgImage}}') no-repeat;">
+        <view class="header">
+          <text>{{item.day}}</text>
+          <text>{{item.title}}</text>
+        </view>
+      </view>
+    </swiper-item>
+  </block>
+</swiper>
+<view class="body" style=''>
+  <block wx:key="{{id}}" wx:for="{{selectedBody}}">
+    <view class='body-item'>
+      <view class="time">
+        <text>{{item.time}}</text>
+      </view>
+      <view class="icon">
+        <icon type="info" size="15"></icon>
+        <view class='vline'></view>
+      </view>
+      <view class="content" style='width:{{contentW}}px;'>
+        <view class="tag">
+          <text>{{item.tag}}</text>
+        </view>
+        <view class="desc">
+          <text>{{item.desc}}</text>
+        </view>
+        <view class="pics" data-pics="{{item.pics}}">
+          <block wx:key="{{id}}" wx:for="{{item.pics}}">
+            <view style="background-image:url('{{item}}');background-repeat:no-repeat;background-size:100%;background-position:center;"></view>
+          </block>
+        </view>
+        <view class='message'>
+          <view  wx:key="{{id}}" wx:for="{{item.message}}">
+            <text>{{item.name}}:</text>
+            <text>{{item.msg}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

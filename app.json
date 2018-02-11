@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/myparty/myparty",
+    "pages/index/index",
+    "pages/edit/edit",
+    "pages/partydetail/detail",
+    "pages/suggest/suggest",
+    "pages/banner/choose",
+    "pages/message/send",
+    "pages/schedule/index",
+    "pages/face/verify",
+    "pages/face/result",
+    "pages/activity/list"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fffef9",
+    "navigationBarTitleText": "聚会活动助手",
+    "navigationBarTextStyle": "#fff",
+    "enablePullDownRefresh": false,
+    "backgroundColor": "#fff"
+  },
+  "tabBar": {
+    "color": "#8a8a8a",
+    "selectedColor": "#2c2c2c",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/myparty/myparty",
+        "text": "约会",
+        "iconPath": "images/my_party_0.png",
+        "selectedIconPath": "images/my_party_1.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "创建",
+        "iconPath": "images/new_party_1.png",
+        "selectedIconPath": "images/new_party_1.png"
+      },
+      {
+        "pagePath": "pages/activity/list",
+        "text": "小乐趣",
+        "iconPath": "images/fun_0.png",
+        "selectedIconPath": "images/fun_1.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 30000,
+    "downloadFile": 60000
+  },
+  "debug": false
+}

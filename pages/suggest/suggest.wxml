@@ -1,0 +1,14 @@
+<!--suggest.wxml-->
+<view class="container"> 
+    <view class="suggest-text">
+       <textarea bindinput="bindTextAreaInput" cursor-spacing="10"  value="{{title}}" placeholder="请输您的宝贵建议"/>
+    </view>
+    <view class="suggest-pic">
+      <image  bindtap="chooseimage" src="{{suggestImage}}"></image>
+    </view>
+    <view class="suggest-sumbit"> 
+       <view bindtap="sumbitSuggestBtn" class="btn-warp-view" hover-class="btn-warp-view-hover" style="margin-top:15px;">
+      <button plain style="border:0px;border-radius:0px;color:#fff;width:100%;font-size:15px;line-height:45px;height:45px;">提交建议</button>
+    </view> 
+    </view>
+</view> 

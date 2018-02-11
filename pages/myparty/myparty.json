@@ -1,0 +1,8 @@
+{ 
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fffef9",
+    "navigationBarTitleText": "聚会活动助手",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh":true,
+    "backgroundColor": "#fffef9" 
+}

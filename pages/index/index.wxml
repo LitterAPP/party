@@ -1,0 +1,125 @@
+<!--index.wxml-->
+<view class="">
+  <view class="header">
+    <image style="height:150px;width:100%;" wx:if="{{banner}}" src="{{banner}}"></image>
+    <view class="userinfo-new">
+      <image class="userinfo-avatar user-avatar-boxshow" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <view class="userinfo-nickname">
+        <text class="nickname">{{userInfo.nickName}}</text>
+      </view>
+    </view>
+    <view bindtap="changeBgImage" class="changeBgImage">
+      <text style="color:#515151;background-color:rgba(0,0,0,0.2);border-radius:20px;padding:2px;font-size:24rpx;">更换背景</text>
+    </view>
+  </view> 
+  <view class="title1">
+    <text>活动信息{{limittips}}</text>
+  </view>
+  <view class="subcontainer1">
+    <textarea bindinput="bindTextAreaInput" cursor-spacing="10" value="{{title}}" placeholder="请输入活动相关信息,例如活动主题、活动时间、活动地点等（限140字）" />
+  </view>
+  <view class="title1">
+    <text>提醒设置</text>
+  </view>
+  <view class="subcontainer2">
+    <view class="sub2-item" bindtap="">
+      <view class="sub2-itme-1">
+        <image src="/images/date.png"></image>
+        
+        <picker mode="date" value="{{startDate}}" start="{{startDate}}" end="{{endDate}}" bindchange="bindDateChange">
+          <view class="picker" hover-class="item-hover">
+            <text>{{selectDate}}</text>
+            <image src="/images/pull_down_icon.png"></image>
+          </view>
+
+        </picker>
+        <picker mode="time" value="{{startTime}}" start="{{startTime}}" end="23:59" bindchange="bindTimeChange">
+          <view class="picker" hover-class="item-hover">
+            <text>{{selectTime}}</text>
+            <image src="/images/pull_down_icon.png"></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+  </view>
+  <view class="title1">
+    <view class='sub2-item' style='height:20px;'>
+    <text>丰富信息[可选]</text>
+    <switch bindchange="moreinfoSwitch" />
+    </view>
+  </view>
+
+  <view   wx:if="{{moreInfoShow}}" class="subcontainer2">
+    <view class="sub2-item" bindtap="recordvoice" hover-class="item-hover">
+      <view class="sub2-itme-1">
+        <image src="{{recordimage}}"></image>
+        <text>来段语音描述吧</text>
+      </view>
+      <view class="sub2-item-2">
+        <image bindtap="deleterecordvoice" style=" height: 15px;width: 15px;display:{{deletedisplay}}" src="/images/delete_btn.png"></image>
+        <image src="/images/arrow-right.png"></image>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{moreInfoShow}}"  class="subcontainer2">
+    <view class="sub2-item" bindtap="chooseimage" hover-class="item-hover">
+      <view class="sub2-itme-1">
+        <image src="{{photoimage}}"></image>
+        <text>来个活动海报图片吧</text>
+      </view>
+      <view class="sub2-item-2">
+        <image bindtap="deleteimage" style=" height: 15px;width: 15px;display:{{deleteimagedisplay}}" src="/images/delete_btn.png"></image>
+        <image src="/images/arrow-right.png"></image>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{moreInfoShow}}"  class="subcontainer2">
+    <view class="sub2-item" bindtap="locationclick" hover-class="item-hover">
+      <view class="sub2-itme-1">
+        <image src="{{locationimage}}"></image>
+        <text>活动集合地点</text>
+        <text style="display:{{locationdisplay}};font-size:11px;color:#aaa;overflow:hidden;">{{locationname}}</text>
+      </view>
+      <view class="sub2-item-2">
+        <image src="/images/arrow-right.png"></image>
+      </view>
+    </view>
+  </view>
+  <!--
+  <view wx:if="{{moreInfoShow}}"  class="subcontainer2">
+    <view class="sub2-item" bindtap="scheduleclick" hover-class="item-hover">
+      <view class="sub2-itme-1">
+        <image src="{{locationimage}}"></image>
+        <text>设置活动日程</text> 
+      </view>
+      <view class="sub2-item-2">
+        <image src="/images/arrow-right.png"></image>
+      </view>
+    </view>
+  </view>
+  -->
+  <form bindsubmit="formSubmit" bindreset="formReset" report-submit="true">
+    <view class="btn-warp-view" hover-class="btn-warp-view-hover" style="margin-top:30px;">
+      <button formType="submit" plain style="border:0px;border-radius:0px;color:#fff;width:100%;font-size:15px;line-height:40px;height:40px;">
+        邀请好友
+        </button>
+    </view>
+
+    <view class="btn-warp-view-0" hover-class="btn-warp-view-hover-0" style="margin-top:5px;">
+      <button formType="reset" plain style="border:0px;border-radius:0px;color:#2c2c2c;width:100%;font-size:15px;line-height:40px;height:40px;">
+        重置
+        </button>
+    </view>
+    <!--
+      <view bindtap="createparty" hover="true"  hover-class="item-hover" >
+        <view class="createpartybtn" ><text>邀请好友来参加</text></view>
+      </view>  
+      -->
+    <!--
+    <view class="subcontainer3"> 
+      <view bindtap="cleanform" hover="true"  hover-class="item-hover" >
+        <view class="createpartybtn" ><text>清空活动信息</text></view>
+      </view>  
+    </view> -->
+  </form>
+</view>

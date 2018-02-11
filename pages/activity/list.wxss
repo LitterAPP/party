@@ -1,0 +1,37 @@
+.item{
+  display:  flex;
+  flex-direction: column;  
+}
+
+.item-wrap{
+  display:  flex;
+  flex-direction: column;
+  height: 80px;
+  background: orange;
+  align-items: center;
+  align-content: center;
+  align-self: center; 
+  position: relative; 
+  margin-bottom:2px; 
+  width: 100%;
+}
+
+.title{
+  position: absolute;
+  font-size: 25px; 
+  top: 10px;
+  color: #fff;
+}
+.subtitle{
+  position: absolute;
+  font-size: 15px;
+  top: 45px;
+  color: #f3f3eb; 
+}
+.item-wrap-arrow{
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 0px;
+  top: 25px;
+}

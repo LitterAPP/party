@@ -1,0 +1,41 @@
+<!--pages/face/verify.wxml-->
+<form bindsubmit='verifyFace'>
+<view bindtap='selectMyAvatar' class='avatar_container'>
+  <block wx:if="{{mySelectedAvatar}}">
+    <image mode='aspectFit' src='{{mySelectedAvatar}}'></image>
+  </block>
+  <block wx:else>
+    <image mode='aspectFit' wx:if="{{userInfo.gender==1}}" src='/images/boy_avatar.png'></image>
+    <image mode='aspectFit' wx:elif="{{userInfo.gender==2}}" src='/images/girl_avatar.png'></image>
+    <image mode='aspectFit' wx:else src='/images/default_avatar.png'></image>
+    <image mode='aspectFit' style='height:40px;top:75px;' src='/images/add.png'></image>
+  </block>
+</view>
+<view class='tips'>
+  <text>请选择你自己的头像</text>
+</view>
+<view bindtap='selectTaAvatar' class='avatar_container'>
+  <block wx:if="{{taSelectedAvatar}}">
+    <image mode='aspectFit' src='{{taSelectedAvatar}}'></image>
+  </block>
+  <block wx:else>
+    <image mode='aspectFit' src='/images/default_avatar.png'></image>
+    <image mode='aspectFit' style='height:40px;top:75px;' src='/images/add.png'></image>
+  </block>
+</view>
+<view class='tips'>
+  <text>请选择Ta的头像</text>
+</view>
+
+<view class='tips'>
+  <input name='taName' type="text" maxlength="4" confirm-type="done" placeholder='输入Ta的代号'></input>
+</view>
+
+<view class='tips'>
+  <button form-type='submit'  size='mini' type='primary'>我们像吗？</button>
+</view>
+
+<view class='tips'>
+  <text>Tips:照片中只有1个人脸，结果更准哦~</text>
+</view>
+</form>

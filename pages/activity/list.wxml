@@ -1,0 +1,20 @@
+<!--pages/activity/list.wxml-->
+<view> 
+  <view wx:for='{{list}}' wx:ke='{{id}}' class='item'>
+    <block wx:if='{{item.local==1}}'>
+      <view class='item-wrap'  catchtap='goPage' data-path='{{item.path}}'>
+        <text class='title'>{{item.title}}</text>
+        <text class='subtitle'>{{item.subtitle}}</text>
+        <image mode='aspectFill' style=' width: 100%;' src='{{item.actBgUrl}}'></image>
+        <image class='item-wrap-arrow' src='/images/arrow-right.png'></image>
+      </view>
+    </block>
+    <block wx:else>
+      <view class='item-wrap'>
+        <text class='title'>{{item.title}}</text>
+        <text class='subtitle'>{{item.subtitle}}</text>
+        <image src='{{item.actBgUrl}}'></image>
+      </view>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,137 @@
+/* pages/schedule/index.wxss */
+
+swiper {
+  height: 70px;
+  background: #fff;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.content{
+   display: flex;
+  flex-direction: column;
+  padding-right: 5px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+}
+
+.header > text:nth-child(1) {
+  font-size: 18px;
+}
+
+.header > text:nth-child(2) {
+  font-size: 13 px;
+  color: #666;
+}
+
+.body-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50px;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20px;
+  padding-top: 3px; 
+}
+
+.vline {
+  display: flex;
+  width: 1px;
+  height: 100%;
+  border-left: dotted 1px #555;
+}
+
+.time text {
+  color: #666;
+  font-size: 15px;
+}
+
+.pics {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 2px 5px;
+}
+
+.pics view {
+  display: flex;
+  flex-direction: column;
+  margin: 2px;
+  width: 50px;
+  height: 35px;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2px 5px;
+  background-color: #FFFFE0;
+  border-radius: 10px;
+}
+
+.message view {
+  display: flex;
+  flex-direction: row;
+  align-items: center; 
+}
+.message view  text:nth-child(1){
+   color: #CCCCCC;
+   font-size: 12px;
+}
+.message view  text:nth-child(2){
+   color: #848484;
+   font-size: 12px;
+}
+
+.tag {
+  display: flex;
+  flex-direction: column;
+}
+
+.tag text {
+  color: #000;
+  font-size: 17px;
+  border: solid 1px #f4f4f4;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  margin: 5px;
+  padding-left: 8px;
+}
+
+.desc {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2px 5px;
+}
+
+.desc text {
+  color: #848484;
+  font-size: 14px;
+}

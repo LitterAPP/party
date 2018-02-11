@@ -1,0 +1,31 @@
+<!--choose.wxml-->
+<view class="">
+  <view class="banner-item">
+    <text>运动</text>
+    <view class="banner-item-image">
+      <image bindtap="choosed" data-path="{{domain}}public/images/yd-1.png" src="{{domain}}public/images/yd-1.png"></image>
+      <image bindtap="choosed" data-path="{{domain}}public/images/yd-2.png" src="{{domain}}public/images/yd-2.png"></image>
+    </view>
+  </view> 
+  <view class="banner-item">
+    <text>唯美</text>
+    <view class="banner-item-image">
+      <image bindtap="choosed" data-path="{{domain}}public/images/wm-1.png" src="{{domain}}public/images/wm-1.png"></image>
+      <image bindtap="choosed" data-path="{{domain}}public/images/wm-2.png" src="{{domain}}public/images/wm-2.png"></image>
+    </view>
+  </view>
+  <view class="banner-item">
+    <text>宴请</text>
+    <view class="banner-item-image">
+      <image bindtap="choosed" data-path="{{domain}}public/images/yq-1.png" src="{{domain}}public/images/yq-1.png"></image>
+      <image bindtap="choosed" data-path="{{domain}}public/images/yq-2.png" src="{{domain}}public/images/yq-2.png"></image>
+    </view>
+  </view>
+  <view class="banner-item">
+    <text>节日</text>
+    <view class="banner-item-image">
+      <image bindtap="choosed" data-path="{{domain}}public/images/jr-1.png" src="{{domain}}public/images/jr-1.png"></image>
+      <image bindtap="choosed" data-path="{{domain}}public/images/jr-2.png" src="{{domain}}public/images/jr-2.png"></image>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,55 @@
+<view wx:if="{{list}}" bindtap="itemtap" data-openid="{{item.party.openid}}" data-id="{{item.party.id}}" hover-class="item-hover" class="item-new" wx:key="{{item.party.id}}" wx:for="{{list}}" wx:for-item="item" data-title="{{item.party.title}}">
+  <view class="item-new-date">
+    <image src="/images/date.png"></image>
+    <text>{{item.party.showDate}}</text>
+    <text>{{item.party.showWeekDay}}</text>
+  </view>
+  <view class="item-new-content">
+    <view class="item-new-content-pt1">
+      <view class="item-new-content-pt1-banner">
+        <image wx:if="{{item.party.banner}}" src="{{item.party.banner}}"></image>
+        <image wx:else src="{{defaultBanner}}"></image>
+      </view>
+      <!--
+      <view class="item-new-content-pt1-master">
+        <image class="user-avatar-boxshow" src="{{item.master.avatarUrl}}"></image>
+      </view>
+      -->
+      <view class="item-new-content-pt1-status">
+        <image wx:if="{{item.party.status==1}}" class="" src="/images/on_way.png"></image>
+        <image wx:if="{{item.party.status==2}}" class="" src="/images/out_way.png"></image>
+      </view>
+    </view>
+    <view class="item-new-content-pt2">
+      <view class="item-new-content-pt2-title">
+        <text>{{item.party.title}}</text>
+      </view>
+      <view class="item-new-content-pt2-date">
+        <image src="/images/list-time-icon.png"></image>
+        <text>{{item.party.showStartTime}}</text>
+      </view>
+      <view wx:if="{{item.location}}" class="item-new-content-pt2-address">
+        <image src="/images/list-location-icon.png"></image>
+        <text>{{item.location.name}}</text>
+      </view>
+      <view class="item-new-content-pt2-joner">
+        <text>{{item.takeUsers.length}}人报名</text>
+        <view class="item-new-content-pt2-joner-tx">
+          <block wx:key="{{item.takeUsers.id}}" wx:for="{{item.takeUsers}}">
+            <view style="width:30px;height:30px;position: absolute;right:{{index*15+10}}px;z-index:{{index}}">
+              <image class="" style="border-radius: 50%;width:20px;height:20px;" src="{{item.avatarUrl}}"></image>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="nomoredata" wx:if="{{hasmore==false}}"> 
+  <text>没有更多数据了</text> 
+</view>
+<view wx:if="{{!list}}" class="gotocreateparty">
+  <image class="emptyImage" src="/images/empty.png"></image>
+  <text>发起您的第一个聚会吧</text>
+  <image class="addimage" bindtap="gotoCreateParyt" src="/images/add.png"></image>
+</view>

@@ -1,0 +1,107 @@
+<!--detail.wxml-->
+<view style="background-color:#fff;">
+  <view class="header-new">
+    <image wx:if="{{detail.partyInfo.party.banner}}" src="{{detail.partyInfo.party.banner}}"></image>
+    <image wx:else src="/images/wm-1.png"></image>
+    <view class="header-new-1">
+      <view class="header-new-item-1">
+        <view class="userinfo-detail">
+          <image class="user-avatar-boxshow" src="{{detail.partyInfo.user.avatarUrl}}"></image>
+          <text>{{detail.partyInfo.user.nickName}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="header-new-2">
+      <text style="padding-top: 5px;z-index:101;">{{detail.partyInfo.party.title}}</text>
+      <text style="font-size:26rpx;padding-bottom:5px;">{{detail.partyInfo.party.showDate}} {{detail.partyInfo.party.showWeekDay}} {{detail.partyInfo.party.showStartTime}}</text>
+    </view>
+  </view>
+
+  <view class="item-new-content-pt2-joner">
+    <text>{{joinCount}}人报名 {{nonjoinCount}}人不参加 {{nonsayCount}}人观望</text>
+    <view class="item-new-content-pt2-joner-tx">
+      <block wx:key="{{detail.takeUsers.id}}" wx:for="{{detail.takeUsers}}" wx:for-item="item">
+        <view style="width:30px;height:30px;position: absolute;right:{{index*15+10}}px;z-index:{{index}}">
+          <image class="" style="border-radius: 50%;width:20px;height:20px;" src="{{item.avatarUrl}}"></image>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="subcontainer2" wx:if="{{recordtmpfile}}">
+    <view class="sub2-item" bindtap="playvoice" hover-class="item-hover">
+      <view class="sub2-itme-1">
+        <image src="{{voiceImage}}"></image>
+        <text>围观房主萌音~</text>
+      </view>
+      <view class="sub2-item-2">
+        <image src="/images/arrow-right.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="subcontainer2" wx:if="{{phototmpfile}}">
+    <view class="sub2-item" bindtap="previewimage" hover-class="item-hover">
+      <view class="sub2-itme-1">
+        <image src="{{phototmpfile}}"></image>
+        <text>围观房主果照~</text>
+      </view>
+      <view class="sub2-item-2">
+        <image src="/images/arrow-right.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="subcontainer2" wx:if="{{detail.location}}">
+    <view class="sub2-item" bindtap="openlocation" hover-class="item-hover">
+      <view class="sub2-itme-1">
+        <image src="/images/location_btn.png"></image>
+        <text>导航去 {{detail.location.name}}</text>
+
+      </view>
+      <view class="sub2-item-2">
+        <image src="/images/arrow-right.png"></image>
+      </view>
+    </view>
+  </view>
+
+  <view class="messagecontainer" style="margin-top:50rpx;">
+    <view class="sendmessage">
+      <text bindtap="sendmessage" data-partyid="{{detail.partyInfo.party.id}}" data-session="{{userInfo.session}}">留言</text>
+    </view>
+    <view wx:key="{{detail.message.id}}" wx:for="{{detail.message}}" wx:for-item="item" class="messagelist">
+      <view class="messagelist-user">
+        <image src="{{item.user.avatarUrl}}"></image>
+        <text>{{item.user.nickName}}</text>
+        <text style="padding-left:10px;">{{item.message.showCreateTime}}</text>
+      </view>
+      <view class="messagelist-content">
+        <text>{{item.message.message}}</text>
+        <text  wx:if="{{item.isMySelf}}" bindtap="deleteMessage" data-id="{{item.message.id}}" style="color:red;">删除</text>
+      </view>
+    </view>
+  </view>
+  <block wx:if="{{ismaster}}">
+    <view bindtap="editbtn" class="btn-warp-view" hover-class="btn-warp-view-hover" style="margin-top:15px;">
+      <button plain style="border:0px;border-radius:0px;color:#fff;width:100%;font-size:15px;line-height:45px;height:45px;">编辑</button>
+    </view>
+
+    <view bindtap="deletebtn" class="btn-warp-view" hover-class="btn-warp-view-hover" style="margin-top:5px;">
+      <button plain style="border:0px;border-radius:0px;color:#fff;width:100%;font-size:15px;line-height:45px;height:45px;">删除</button>
+    </view>
+
+  </block>
+  <block wx:else>
+    <view class="btn-warp-view" hover-class="btn-warp-view-hover" style="margin-top:15px;">
+      <form bindsubmit="formSubmit" report-submit="true ">
+        <button form-type="submit" plain style="border:0px;border-radius:0px;color:#fff;width:100%;font-size:15px;line-height:45px;height:45px;">我要报名</button>
+      </form>
+    </view>
+    <view bindtap="nonjoinbtn" class="btn-warp-view" hover-class="btn-warp-view-hover" style="margin-top:5px;">
+      <button bindtap="nonjoinbtn" plain style="border:0px;border-radius:0px;color:#fff;width:100%;font-size:15px;line-height:45px;height:45px;">暂不报名</button>
+    </view>
+  </block>
+
+
+  <view bindtap="sharebtn" class="btn-warp-view" hover-class="btn-warp-view-hover" style="margin-top:5px;">
+    <button open-type="share" plain style="border:0px;border-radius:0px;color:#fff;width:100%;font-size:15px;line-height:45px;height:45px;">邀请好友</button>
+  </view>
+</view>

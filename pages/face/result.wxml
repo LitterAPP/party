@@ -1,0 +1,34 @@
+<!--pages/face/verify.wxml-->
+<view   class='avatar_container'>
+  <image wx:if="{{showResult}}" mode='aspectFit' src='{{verifyData.myAvatar}}'></image>
+  <image wx:else mode='aspectFit' src='/images/default_avatar.png'></image>
+</view>
+<view class='desc'>
+  <image src='/images/vs.png'></image>
+  <text class='like-desc'> 我们居然这么像</text>
+  <text class='like-value' wx:if="{{showResult}}">{{percent}}%</text>
+  <text class='like-value-tip' wx:else>评论显示结果</text>
+</view>
+<view   class='avatar_container'>
+  <image  wx:if="{{showResult}}"  mode='aspectFit' src='{{verifyData.taAvatar}}'></image>
+   <image wx:else mode='aspectFit' src='/images/default_avatar.png'></image>
+</view>
+<form bindsubmit='commitComments'>
+  <view class='commit_comment'>
+    <input name='comment' value='{{defaultComment}}'  type="text" maxlength="15" placeholder='评论显示结果'></input>
+    <button form-type='submit' size='mini' type='default'>评论</button>
+  </view>
+</form>
+<view class='tips'>
+  <button open-type='share' size='mini' type='default'>转发好友</button>
+  <button bindtap='goVerify' size='mini' type='default'>我也要玩</button>
+</view>
+
+
+<view class='comments'>
+  <view  wx:for='{{comments}}' wx:key='{{id}}' class='comment_item'>
+    <image src='{{item.avatar}}'></image>
+    <text>{{item.nickName}}：</text>
+    <text>{{item.comment}}</text>
+  </view>
+</view>

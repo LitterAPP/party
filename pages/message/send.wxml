@@ -1,0 +1,11 @@
+<!--send.wxml-->
+<view class="title1">
+  <text>想说什么（限140字）当前{{limittips}}</text>
+</view>
+<view class="subcontainer1">
+  <textarea bindinput="bindTextAreaInput" cursor-spacing="10" value="{{title}}" placeholder="留言提交后参与人员均可见" />
+</view>
+
+<view bindtap="sendmessage" class="btn-warp-view" hover-class="btn-warp-view-hover" style="margin-top:15px;">
+  <button plain style="border:0px;border-radius:0px;color:#fff;width:100%;font-size:15px;line-height:45px;height:45px;">说完了</button>
+</view>

@@ -1,0 +1,53 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.5.0",
+	"appid": "wx2010599f7556154d",
+	"projectname": "%E8%81%9A%E4%BC%9A%E6%B4%BB%E5%8A%A8%E5%8A%A9%E6%89%8B",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "我和谁最像",
+					"pathName": "pages/face/verify",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "我和Ta像吗",
+					"pathName": "pages/face/result",
+					"query": "id=1"
+				},
+				{
+					"id": 2,
+					"name": "我和Ta像吗",
+					"pathName": "pages/face/result",
+					"query": "id=4"
+				},
+				{
+					"id": -1,
+					"name": "小乐趣列表",
+					"pathName": "pages/activity/list",
+					"query": ""
+				}
+			]
+		}
+	}
+}
